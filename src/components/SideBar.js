@@ -1,20 +1,9 @@
 import { Link } from "react-router-dom";
 import logo from "../components/assets/images/logo-DH.png";
-import { Route, Routes } from "react-router-dom";
-import GenresInDb from "./GenresInDb";
-import LastMovieInDb from "./LastMovieInDb";
-import ContentRowMovies from "./Chart";
 
 const SideBar = () => {
   return (
     <>
-      <Routes>
-        <Route path="/" />
-        <Route path="/generos" element={<GenresInDb />} />
-        <Route path="/lastmovie" element={<LastMovieInDb />} />
-        <Route path="/contenido" element={<ContentRowMovies />} />
-        <Route path="*" element={<p>ERROR 404</p>} />
-      </Routes>
       <ul
         className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
         id="accordionSidebar"
@@ -31,12 +20,10 @@ const SideBar = () => {
         <hr className="sidebar-divider my-0" />
 
         <li className="nav-item active">
-          <a className="nav-link" href="/">
+          <Link className="nav-link" to="/">
             <i className="fas fa-fw fa-tachometer-alt"></i>
-            <Link to={"/"}>
-              <span>Dashboard - DH movies</span>
-            </Link>
-          </a>
+            <span>Dashboard - DH movies</span>
+          </Link>
         </li>
 
         <hr className="sidebar-divider" />
@@ -46,28 +33,57 @@ const SideBar = () => {
         <li className="nav-item">
           <a className="nav-link collapsed" href="/">
             <i className="fas fa-fw fa-folder"></i>
-            <Link to={"/generos"}>
-              <span>Pages</span>
-            </Link>
+            <span>Pages</span>
           </a>
         </li>
 
         <li className="nav-item">
           <a className="nav-link" href="/">
             <i className="fas fa-fw fa-chart-area"></i>
-            <Link to={"/lastmovie"}>
-              <span>Charts</span>
-            </Link>
+            <span>Charts</span>
           </a>
         </li>
 
         <li className="nav-item">
           <a className="nav-link" href="/">
             <i className="fas fa-fw fa-table"></i>
-            <Link to={"/contenido"}>
-              <span>Tables</span>
-            </Link>
+            <span>Tables</span>
           </a>
+        </li>
+
+        {/* <!-- Divider --> */}
+        <hr className="sidebar-divider d-none d-md-block" />
+
+        <div className="sidebar-heading">Sections</div>
+
+        <li className="nav-item">
+          <Link className="nav-link collapsed" to="/genresdb">
+            <i className="fas fa-fw fa-folder"></i>
+            <span>Genres in database</span>
+          </Link>
+        </li>
+
+        {/* <!-- Nav Item - Charts --> */}
+        <li className="nav-item">
+          <Link className="nav-link" to="/content">
+            <i className="fas fa-fw fa-chart-area"></i>
+            <span>Content row movies</span>
+          </Link>
+        </li>
+
+        {/* <!-- Nav Item - Tables --> */}
+        <li className="nav-item">
+          <Link className="nav-link" to="/lastmovie">
+            <i className="fas fa-fw fa-table"></i>
+            <span>Last movie in database</span>
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link className="nav-link" to="/search">
+            <i className="fas fa-fw fa-table"></i>
+            <span>Search</span>
+          </Link>
         </li>
 
         <hr className="sidebar-divider d-none d-md-block" />

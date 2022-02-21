@@ -9,8 +9,8 @@ const ContentWrapper = () => {
         <div id="content">
           <TopBar />
           <ContentRowTop />
+          <Footer />
         </div>
-        <Footer />
       </div>
     </>
   );
