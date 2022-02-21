@@ -180,7 +180,7 @@ const ContentRowTop = () => {
               </div>
             </div>
           </div>
-          <Chart />
+          {/* <Chart /> */}
           <Chart />
         </div>
       </div>

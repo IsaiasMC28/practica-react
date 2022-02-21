@@ -1,8 +1,20 @@
+import { Link } from "react-router-dom";
 import logo from "../components/assets/images/logo-DH.png";
+import { Route, Routes } from "react-router-dom";
+import GenresInDb from "./GenresInDb";
+import LastMovieInDb from "./LastMovieInDb";
+import ContentRowMovies from "./Chart";
 
 const SideBar = () => {
   return (
     <>
+      <Routes>
+        <Route path="/" />
+        <Route path="/generos" element={<GenresInDb />} />
+        <Route path="/lastmovie" element={<LastMovieInDb />} />
+        <Route path="/contenido" element={<ContentRowMovies />} />
+        <Route path="*" element={<p>ERROR 404</p>} />
+      </Routes>
       <ul
         className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
         id="accordionSidebar"
@@ -21,7 +33,9 @@ const SideBar = () => {
         <li className="nav-item active">
           <a className="nav-link" href="/">
             <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard - DH movies</span>
+            <Link to={"/"}>
+              <span>Dashboard - DH movies</span>
+            </Link>
           </a>
         </li>
 
@@ -32,21 +46,27 @@ const SideBar = () => {
         <li className="nav-item">
           <a className="nav-link collapsed" href="/">
             <i className="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
+            <Link to={"/generos"}>
+              <span>Pages</span>
+            </Link>
           </a>
         </li>
 
         <li className="nav-item">
           <a className="nav-link" href="/">
             <i className="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span>
+            <Link to={"/lastmovie"}>
+              <span>Charts</span>
+            </Link>
           </a>
         </li>
 
         <li className="nav-item">
           <a className="nav-link" href="/">
             <i className="fas fa-fw fa-table"></i>
-            <span>Tables</span>
+            <Link to={"/contenido"}>
+              <span>Tables</span>
+            </Link>
           </a>
         </li>
 

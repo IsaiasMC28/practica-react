@@ -4,10 +4,12 @@ import "../components/assets/css/app.css";
 
 function App() {
   return (
-    <div id="wrapper">
-      <SideBar />
-      <ContentWrapper />
-    </div>
+    <>
+      <div id="wrapper">
+        <SideBar />
+        <ContentWrapper />
+      </div>
+    </>
   );
 }
 

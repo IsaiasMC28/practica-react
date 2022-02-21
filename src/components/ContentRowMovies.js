@@ -1,3 +1,5 @@
+import React from "react";
+
 const ContentRowMovies = ({ rowMoviesContent }) => {
   return (
     <div className="row">
